@@ -1,0 +1,69 @@
+﻿@page "/"
+
+<SfChart Title="Weather Statistics">
+    @* <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime" Title="Date Time"
+                               LabelFormat="yyyy MMM" Maximum="@(new DateTime(2021, 07, 1))"
+                               Minimum="@(new DateTime(2015, 12, 31))" EdgeLabelPlacement="EdgeLabelPlacement.Shift"
+                               Interval="6" IntervalType="IntervalType.Months">
+            </ChartPrimaryXAxis>
+            <ChartPrimaryYAxis Title="Temperature">
+            </ChartPrimaryYAxis>
+        <ChartSeriesCollection>
+            <ChartSeries Type="ChartSeriesType.Line" DataSource="@ChartData" XName="Date"
+                         YName="Temperature">
+                <ChartMarker Visible="true" Height="10" Width="10"></ChartMarker>
+
+            </ChartSeries>
+        </ChartSeriesCollection>*@
+    <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.DateTimeCategory"
+                       Title="Business Days" LabelFormat="d"
+                       EdgeLabelPlacement="EdgeLabelPlacement.Shift">
+    </ChartPrimaryXAxis>
+    <ChartPrimaryYAxis Title="Profit">
+    </ChartPrimaryYAxis>
+    <ChartSeriesCollection>
+        <ChartSeries Type="ChartSeriesType.Column" DataSource="@ChartData" XName="Date"
+                     YName="Profit">
+        </ChartSeries>
+    </ChartSeriesCollection>
+</SfChart>
+
+@code {
+
+    public class ChartDataModel
+    {
+        public DateTime Date { get; set; }
+        public double Temperature { get; set; }
+        public int Profit { get; set; }
+    }
+
+    // Date time category Axis
+
+    List<ChartDataModel> ChartData = new List<ChartDataModel>
+{
+        new ChartDataModel { Date = new DateTime(2020, 12, 21), Profit = 21 },
+        new ChartDataModel { Date = new DateTime(2020, 12, 22), Profit =  24},
+        new ChartDataModel { Date = new DateTime(2020, 12, 24), Profit = 25 },
+        new ChartDataModel { Date = new DateTime(2020, 12, 28), Profit = 70 },
+        new ChartDataModel { Date = new DateTime(2021, 1, 4), Profit = 82 },
+        new ChartDataModel { Date = new DateTime(2021, 1, 6), Profit = 53 },
+        new ChartDataModel { Date = new DateTime(2021, 1, 8), Profit = 45 },
+        new ChartDataModel { Date = new DateTime(2021, 1, 11), Profit = 60 }
+    };
+
+    // Date time Axis
+
+    //List<ChartDataModel> ChartData = new List<ChartDataModel>
+    //{
+    //    new ChartDataModel { Date = new DateTime(2016, 3, 1), Temperature = 6.3 },
+    //    new ChartDataModel { Date = new DateTime(2016, 5, 1), Temperature = 13.3 },
+    //    new ChartDataModel { Date = new DateTime(2017, 7, 1), Temperature = 8.0 },
+    //    new ChartDataModel { Date = new DateTime(2017, 4, 1), Temperature = 17.3 },
+    //    new ChartDataModel { Date = new DateTime(2018, 5, 1), Temperature = 19.8 },
+    //    new ChartDataModel { Date = new DateTime(2018, 9, 1), Temperature = 5.1 },
+    //    new ChartDataModel { Date = new DateTime(2019, 2, 1), Temperature = 10.1 },
+    //    new ChartDataModel { Date = new DateTime(2019, 7, 1), Temperature = 9.6 },
+    //    new ChartDataModel { Date = new DateTime(2020, 5, 1), Temperature = 18.1 },
+    //    new ChartDataModel { Date = new DateTime(2020, 12, 15), Temperature = 8.2 }
+    //};
+}
