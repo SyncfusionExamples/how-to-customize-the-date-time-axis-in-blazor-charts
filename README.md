@@ -46,10 +46,6 @@ dotnet run
 
 4. Open the local application URL displayed in the terminal output.
 
-## Project Structure
-
-- `Client/Pages/*.razor` — Blazor page implementation that renders and configures the chart sample.
-
 ## Support and Feedback
 
 - For general product questions, visit the [Syncfusion Community Forum](https://www.syncfusion.com/forums) or [Syncfusion Support](https://www.syncfusion.com/support).
